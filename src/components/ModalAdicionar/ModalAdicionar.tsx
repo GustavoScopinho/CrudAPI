@@ -32,6 +32,7 @@ export const ModalAdicionar = (props: ModalProps) => {
 
   const addNovoUsuario = (data: INewUser) => {
     createNewUser(data)
+    props.onRequestClose()
   }
 
   const editarUsuario = (data: INewUser) => {

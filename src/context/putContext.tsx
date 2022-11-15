@@ -1,11 +1,12 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import { api } from '../utilidades/api'
 import { INewUserContext, IChildren } from '../utilidades/interface'
+import { useNavigate } from 'react-router-dom'
 
 export const putContext = createContext({} as any)
 
 export const PutContextProvider = ({ children }: IChildren) => {
-  // const [putDados, setPutDados] = useState<any>()
+  const navigate = useNavigate()
 
   const editUser = async (user: INewUserContext) => {
     try {
@@ -14,6 +15,8 @@ export const PutContextProvider = ({ children }: IChildren) => {
 
         .put(`/dados-pessoais/${user.cpf}`, user)
         .then(response => console.log(response))
+      alert('Usuario editado')
+      navigate('/')
     } catch (error) {
       console.log(error)
     }

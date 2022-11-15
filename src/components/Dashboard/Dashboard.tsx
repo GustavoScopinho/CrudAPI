@@ -8,20 +8,17 @@ import IconMenu from '../../assets/icon-menu.png'
 import IconLapis from '../../assets/icon-lapis.png'
 import IconLixeira from '../../assets/icon-lixeira.png'
 import { ModalAdicionar } from '../ModalAdicionar/ModalAdicionar'
-import { INewUser, INewUserContext } from '../../utilidades/interface'
 import { getContext } from '../../context/getContext'
 import { GoThreeBars } from 'react-icons/go'
 import { BiSearchAlt } from 'react-icons/bi'
 import { delContext } from '../../context/delContext'
+import { api } from '../../utilidades/api'
 
 export const Dashboard = () => {
   const { dadosAPI } = useContext(getContext)
 
   const [modal, setModal] = useState<boolean>(false)
   const [modalEditar, setModalEditar] = useState<boolean>(false)
-
-  // const [editCPF, setEditCPF] = useState<string>('')
-  // const [editNome, setEditNome] = useState<string>('')
 
   const [dados, setDados] = useState<any>()
 
@@ -34,7 +31,28 @@ export const Dashboard = () => {
     console.log(dados)
   }, [dados])
 
+  const handleAdd = () => {
+    setModal(false)
+  }
+
   const { deletarUsuario } = useContext(delContext)
+
+  const [valueInput, setValueInput] = useState<string>()
+  const [inputSearchResult, setInputSearchResult] = useState<any>()
+  useEffect(() => {
+    console.log(inputSearchResult)
+  }, [inputSearchResult])
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    try {
+      await api
+        .get(`/dados-pessoais/${valueInput}`)
+        .then(response => setInputSearchResult(response.data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -51,15 +69,18 @@ export const Dashboard = () => {
           <div className="ContainerMenorUsuarios">
             <div className="FirstContainer">
               <h3>Usuários</h3>
-              <div className="ContainerSearch">
+              <form onSubmit={handleSubmit} className="ContainerSearch">
                 <input
                   type="text"
                   placeholder="Filtre o usuário pelo CPF"
                   name=""
                   id=""
+                  onChange={e => setValueInput(e.target.value)}
                 />{' '}
-                <BiSearchAlt className="IconSearch" size={30} />
-              </div>
+                <button type="submit">
+                  <BiSearchAlt className="IconSearch" size={30} />
+                </button>
+              </form>
               <button
                 onClick={() => setModal(true)}
                 className="botaoAdicionarUsuario"
@@ -118,7 +139,7 @@ export const Dashboard = () => {
             </table>
           </div>
         </ContainerUsuarios>
-        <ModalAdicionar isOpen={modal} onRequestClose={() => setModal(false)} />
+        <ModalAdicionar isOpen={modal} onRequestClose={() => handleAdd()} />
         <ModalAdicionar
           isOpen={modalEditar}
           onRequestClose={() => setModalEditar(false)}
