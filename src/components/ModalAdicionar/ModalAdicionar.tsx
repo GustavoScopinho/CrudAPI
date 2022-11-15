@@ -11,6 +11,8 @@ Modal.setAppElement('#root')
 interface ModalProps {
   isOpen: boolean
   onRequestClose: () => void
+  type?: number // 1- editar
+  cpf?: string
 }
 
 export const ModalAdicionar = (props: ModalProps) => {
@@ -41,13 +43,17 @@ export const ModalAdicionar = (props: ModalProps) => {
             />
           </div>
 
-          <h2>Adicionar novo usuário</h2>
+          <h2>{props.type ? 'Editar usuário' : 'Adicionar novo usuário'}</h2>
           <form onSubmit={handleSubmit(addNovoUsuario)}>
             <label htmlFor="nome">Nome completo</label>
             <input type="text" required id="nome" {...register('nome')} />
 
             <label htmlFor="cpf">CPF</label>
-            <input type="text" required id="cpf" {...register('cpf')} />
+            {props.type ? (
+              <input type="text" disabled placeholder={props.cpf} />
+            ) : (
+              <input type="text" required id="cpf" {...register('cpf')} />
+            )}
 
             <label htmlFor="rg">RG</label>
             <input type="text" required id="rg" {...register('rg')} />
@@ -78,7 +84,7 @@ export const ModalAdicionar = (props: ModalProps) => {
             <input
               className="button-add"
               type="submit"
-              value="Adicionar usuário"
+              value={props.type ? 'Editar usuário' : 'Adicionar novo usuário'}
             />
           </form>
         </ContainerModal>

@@ -15,6 +15,14 @@ export const Dashboard = () => {
   const { dadosAPI } = useContext(getContext)
 
   const [modal, setModal] = useState<boolean>(false)
+  const [modalEditar, setModalEditar] = useState<boolean>(false)
+
+  const [editCPF, setEditCPF] = useState<string>('')
+
+  const handleEdit = (cpf: string) => {
+    setEditCPF(cpf)
+    setModalEditar(true)
+  }
 
   console.log(modal)
   return (
@@ -66,7 +74,11 @@ export const Dashboard = () => {
                       <button>
                         {' '}
                         <i>
-                          <img src={IconLapis} alt="" />
+                          <img
+                            src={IconLapis}
+                            onClick={() => handleEdit(user.cpf)}
+                            alt=""
+                          />
                         </i>
                       </button>{' '}
                       <button>
@@ -83,6 +95,12 @@ export const Dashboard = () => {
           </div>
         </ContainerUsuarios>
         <ModalAdicionar isOpen={modal} onRequestClose={() => setModal(false)} />
+        <ModalAdicionar
+          isOpen={modalEditar}
+          onRequestClose={() => setModalEditar(false)}
+          type={1}
+          cpf={editCPF}
+        />
       </ContainerDashboard>
     </>
   )
