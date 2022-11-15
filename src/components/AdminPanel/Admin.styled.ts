@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 export const ContainerAdmin = styled.div`
-  background-color: #2a3042;
+  background-color: #121214;
   height: 100vh;
   width: 287px;
 `
 
 export const ContainerLogo = styled.div`
   display: flex;
-
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 
   h5 {
     color: #fff;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerHome = styled.div`
   display: flex;
-  background-color: #2a3042;
+  background-color: #121214;
 `
 
 export const ContainerAdmin = styled.div`

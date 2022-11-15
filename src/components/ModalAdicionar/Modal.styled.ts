@@ -3,17 +3,16 @@ import styled from 'styled-components'
 export const ModalStyle = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
-  },
-  content: {
-    display: 'flex',
-    justifyContent: 'end',
-    alignItems: 'flex-end'
   }
+  // content: {
+  //   top: '50%',
+  //   left: '50%',
+  //   right: 'auto'
+  // }
 }
 
 export const Modal = styled.div`
   .modal-overlay {
-    background-color: red;
     width: 100%;
     height: 800px;
   }
@@ -21,17 +20,18 @@ export const Modal = styled.div`
 export const ContainerModal = styled.div`
   width: 400px;
   height: 700px;
-  background-color: #fff;
+  background-color: #7c7c8a;
+  box-shadow: 1px 1px 5px 1px #7c7c8a;
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 50;
+  top: 3%;
+  left: 38%;
+  right: auto;
   border-radius: 20px;
   padding: 20px;
 
   h2 {
     padding-top: 20px;
+    color: #fff;
   }
 
   form {
@@ -47,7 +47,7 @@ export const ContainerModal = styled.div`
     }
 
     label {
-      color: #007bff;
+      color: #e1e1e6;
       font-weight: 600;
       padding-top: 10px;
     }
@@ -61,8 +61,8 @@ export const ContainerModal = styled.div`
   }
 
   .button-add {
-    background-color: #007bff;
-    border-radius: 49px;
+    background-color: rgb(124, 38, 248);
+    border-radius: 5px;
     color: #fff;
     width: 220px;
     height: 42px;

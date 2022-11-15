@@ -10,6 +10,7 @@ import IconLixeira from '../../assets/icon-lixeira.png'
 import { ModalAdicionar } from '../ModalAdicionar/ModalAdicionar'
 import { INewUser } from '../../utilidades/interface'
 import { getContext } from '../../context/getContext'
+import { GoThreeBars } from 'react-icons/go'
 
 export const Dashboard = () => {
   const { dadosAPI } = useContext(getContext)
@@ -30,7 +31,7 @@ export const Dashboard = () => {
       <ContainerDashboard>
         <div>
           <div className="container-logo">
-            <img src={IconMenu} alt="" />
+            <GoThreeBars size={25} className="iconMenu" />
           </div>
           <ContainerTitulo>
             <h2>LISTA DE USUÁRIOS</h2>

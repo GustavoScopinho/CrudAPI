@@ -2,16 +2,19 @@ import styled from 'styled-components'
 
 export const ContainerDashboard = styled.div`
   width: 100%;
-  background: #ccc;
-  height: 100%;
+  background: #202024;
+  height: 100vh;
 
   .container-logo {
     padding: 10px 20px;
   }
+  .iconMenu {
+    color: #fff;
+  }
 `
 
 export const ContainerTitulo = styled.div`
-  color: #494949;
+  color: #e1e1e6;
   font-weight: 500;
   padding: 30px 0px 0px 20px;
 `
@@ -22,11 +25,15 @@ export const ContainerUsuarios = styled.div`
   justify-content: center;
   margin-top: 50px;
 
+  h3 {
+    color: #c4c4cc;
+  }
+
   .ContainerMenorUsuarios {
     width: 90%;
     height: 100%;
     padding-bottom: 10px;
-    background-color: #fffdfd;
+    background-color: #323238;
     border-radius: 12px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
   }
@@ -44,8 +51,8 @@ export const ContainerUsuarios = styled.div`
     }
 
     button {
-      background-color: #007bff;
-      border-radius: 49px;
+      background-color: rgb(124, 38, 248);
+      border-radius: 5px;
       color: #fff;
       width: 220px;
       height: 42px;
@@ -62,27 +69,33 @@ export const ContainerUsuarios = styled.div`
   table {
     width: 100%;
     border-collapse: collapse;
-
+    /* rgb(124, 38, 248) */
     th {
-      background-color: #2a3042;
+      background-color: #9f82d8;
       color: #fff;
       height: 54.3px;
       width: 11%;
     }
 
     td {
-      border-bottom: 1px solid #e1e0e2;
+      border-bottom: 1px solid #7c7c9a;
       text-align: center;
       height: 65px;
       font-weight: 600;
+      color: #c4c4cc;
 
       button {
         width: 39.27px;
         height: 27.15px;
-        border: none;
-        background-color: #007bff;
-        border-radius: 35px;
+        background: #323238;
+        border: 1px solid rgb(124, 38, 248);
+        border-radius: 5px;
         cursor: pointer;
+
+        :hover {
+          scale: 1.05;
+          transform: 2s;
+        }
       }
     }
 
