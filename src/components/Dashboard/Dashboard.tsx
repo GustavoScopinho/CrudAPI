@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import {
   ContainerDashboard,
   ContainerTitulo,
@@ -8,9 +8,11 @@ import IconMenu from '../../assets/icon-menu.png'
 import IconLapis from '../../assets/icon-lapis.png'
 import IconLixeira from '../../assets/icon-lixeira.png'
 import { ModalAdicionar } from '../ModalAdicionar/ModalAdicionar'
-import { INewUser } from '../../utilidades/interface'
+import { INewUser, INewUserContext } from '../../utilidades/interface'
 import { getContext } from '../../context/getContext'
 import { GoThreeBars } from 'react-icons/go'
+import { BiSearchAlt } from 'react-icons/bi'
+import { delContext } from '../../context/delContext'
 
 export const Dashboard = () => {
   const { dadosAPI } = useContext(getContext)
@@ -18,14 +20,22 @@ export const Dashboard = () => {
   const [modal, setModal] = useState<boolean>(false)
   const [modalEditar, setModalEditar] = useState<boolean>(false)
 
-  const [editCPF, setEditCPF] = useState<string>('')
+  // const [editCPF, setEditCPF] = useState<string>('')
+  // const [editNome, setEditNome] = useState<string>('')
 
-  const handleEdit = (cpf: string) => {
-    setEditCPF(cpf)
+  const [dados, setDados] = useState<any>()
+
+  const handleEdit = (e: string) => {
     setModalEditar(true)
+    setDados(e)
   }
 
-  console.log(modal)
+  useEffect(() => {
+    console.log(dados)
+  }, [dados])
+
+  const { deletarUsuario } = useContext(delContext)
+
   return (
     <>
       <ContainerDashboard>
@@ -41,6 +51,15 @@ export const Dashboard = () => {
           <div className="ContainerMenorUsuarios">
             <div className="FirstContainer">
               <h3>Usuários</h3>
+              <div className="ContainerSearch">
+                <input
+                  type="text"
+                  placeholder="Filtre o usuário pelo CPF"
+                  name=""
+                  id=""
+                />{' '}
+                <BiSearchAlt className="IconSearch" size={30} />
+              </div>
               <button
                 onClick={() => setModal(true)}
                 className="botaoAdicionarUsuario"
@@ -77,7 +96,7 @@ export const Dashboard = () => {
                         <i>
                           <img
                             src={IconLapis}
-                            onClick={() => handleEdit(user.cpf)}
+                            onClick={() => handleEdit(user)}
                             alt=""
                           />
                         </i>
@@ -85,7 +104,11 @@ export const Dashboard = () => {
                       <button>
                         {' '}
                         <i>
-                          <img src={IconLixeira} alt="" />
+                          <img
+                            src={IconLixeira}
+                            onClick={() => deletarUsuario(user.cpf)}
+                            alt=""
+                          />
                         </i>{' '}
                       </button>
                     </td>
@@ -100,7 +123,14 @@ export const Dashboard = () => {
           isOpen={modalEditar}
           onRequestClose={() => setModalEditar(false)}
           type={1}
-          cpf={editCPF}
+          cpf={dados?.cpf}
+          nome={dados?.nome}
+          rg={dados?.rg}
+          cnh={dados?.cnh}
+          nomeMae={dados?.nomeMae}
+          nomePai={dados?.nomePai}
+          tituloEleitor={dados?.tituloEleitor}
+          sexo={dados?.sexo}
         />
       </ContainerDashboard>
     </>

@@ -4,6 +4,7 @@ import './App.css'
 import { Home } from './pages/Home/Home'
 import { GetUserProvider } from './context/getContext'
 import { PutContextProvider } from './context/putContext'
+import { DelContextProvider } from './context/delContext'
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
         <UserProvider>
           <GetUserProvider>
             <PutContextProvider>
-              <Routes>
-                <Route path="/" element={<Home />} />
-              </Routes>
+              <DelContextProvider>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                </Routes>
+              </DelContextProvider>
             </PutContextProvider>
           </GetUserProvider>
         </UserProvider>

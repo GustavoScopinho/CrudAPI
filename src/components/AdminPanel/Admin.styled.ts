@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerAdmin = styled.div`
   background-color: #121214;
-  height: 100vh;
+  height: 100%;
   width: 287px;
 `
 

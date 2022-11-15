@@ -21,7 +21,7 @@ export const ContainerModal = styled.div`
   width: 400px;
   height: 700px;
   background-color: #7c7c8a;
-  box-shadow: 1px 1px 5px 1px #7c7c8a;
+  box-shadow: 1px 1px 5px 1px #000;
   position: fixed;
   top: 3%;
   left: 38%;
@@ -39,7 +39,7 @@ export const ContainerModal = styled.div`
     flex-direction: column;
 
     input {
-      width: 200px;
+      width: 350px;
       height: 35px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -53,7 +53,7 @@ export const ContainerModal = styled.div`
     }
 
     select {
-      width: 200px;
+      width: 350px;
       height: 35px;
       border: 1px solid #ccc;
       border-radius: 5px;

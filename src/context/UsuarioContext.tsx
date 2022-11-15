@@ -10,6 +10,7 @@ export const UserProvider = ({ children }: IChildren) => {
 
   const createNewUser = async (user: INewUserContext) => {
     try {
+      console.log(user)
       await api.post('/dados-pessoais', user)
       alert('Usuario criado')
       navigate('/')

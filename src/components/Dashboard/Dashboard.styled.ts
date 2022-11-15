@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const ContainerDashboard = styled.div`
   width: 100%;
   background: #202024;
-  height: 100vh;
+  height: 100%;
+  padding-bottom: 50px;
 
   .container-logo {
     padding: 10px 20px;
@@ -24,6 +25,22 @@ export const ContainerUsuarios = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 50px;
+
+  .ContainerSearch {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 300px;
+      height: 30px;
+      border-radius: 5px;
+      border: none;
+    }
+    .IconSearch {
+      color: #fff;
+      padding-left: 5px;
+    }
+  }
 
   h3 {
     color: #c4c4cc;

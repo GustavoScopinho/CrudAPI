@@ -5,9 +5,15 @@ import { INewUserContext, IChildren } from '../utilidades/interface'
 export const putContext = createContext({} as any)
 
 export const PutContextProvider = ({ children }: IChildren) => {
+  // const [putDados, setPutDados] = useState<any>()
+
   const editUser = async (user: INewUserContext) => {
     try {
-      await api.put(`/dados-pessoais/${user.cpf}`)
+      console.log(user)
+      await api
+
+        .put(`/dados-pessoais/${user.cpf}`, user)
+        .then(response => console.log(response))
     } catch (error) {
       console.log(error)
     }
