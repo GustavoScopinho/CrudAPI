@@ -7,7 +7,7 @@ Consiste em uma API com GET,POST,PUT e DELETE.
 <hr>
 
 ![Badge](https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT)
-### Para utilizar o projeto basta clonar, te ensino aqui embaixo !
+### Para utilizar o projeto basta clicar no link da descrição, mas caso queira abrir o código no seu computador, te ensino aqui embaixo !
 1 - Crie uma pasta em seu computador. <br>
 2 - Abra o terminal e digite o comando " git clone https://github.com/GustavoScopinho/api-github.git "
 
