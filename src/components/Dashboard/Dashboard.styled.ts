@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerDashboard = styled.div`
   width: 100%;
   background: #202024;
-  height: 100%;
+  min-height: 100vh;
   padding-bottom: 50px;
 
   .container-logo {

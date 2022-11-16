@@ -18,7 +18,7 @@ export const GetUserProvider = ({ children }: IChildren) => {
       }
     }
     buscarUsuarios()
-  }, [])
+  }, [dadosAPI])
 
   return (
     <getContext.Provider value={{ dadosAPI }}>{children}</getContext.Provider>

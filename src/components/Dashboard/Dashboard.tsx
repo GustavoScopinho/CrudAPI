@@ -39,6 +39,7 @@ export const Dashboard = () => {
 
   const [valueInput, setValueInput] = useState<string>()
   const [inputSearchResult, setInputSearchResult] = useState<any>()
+
   useEffect(() => {
     console.log(inputSearchResult)
   }, [inputSearchResult])
@@ -100,42 +101,78 @@ export const Dashboard = () => {
                 <th>Sexo</th>
                 <th>Ações</th>
               </tr>
-              {dadosAPI.map((user: any) => {
-                return (
-                  <tr>
-                    <td>{user.nome}</td>
-                    <td>{user.cpf}</td>
-                    <td>{user.rg}</td>
-                    <td>{user.cnh}</td>
-                    <td>{user.nomeMae}</td>
-                    <td>{user.nomePai}</td>
-                    <td>{user.tituloEleitor}</td>
-                    <td>{user.sexo}</td>
-                    <td className="container-botao">
-                      <button>
-                        {' '}
-                        <i>
-                          <img
-                            src={IconLapis}
-                            onClick={() => handleEdit(user)}
-                            alt=""
-                          />
-                        </i>
-                      </button>{' '}
-                      <button>
-                        {' '}
-                        <i>
-                          <img
-                            src={IconLixeira}
-                            onClick={() => deletarUsuario(user.cpf)}
-                            alt=""
-                          />
-                        </i>{' '}
-                      </button>
-                    </td>
-                  </tr>
-                )
-              })}
+
+              {!inputSearchResult ? (
+                dadosAPI?.map((user: any) => {
+                  return (
+                    <tr>
+                      <td>{user.nome}</td>
+                      <td>{user.cpf}</td>
+                      <td>{user.rg}</td>
+                      <td>{user.cnh}</td>
+                      <td>{user.nomeMae}</td>
+                      <td>{user.nomePai}</td>
+                      <td>{user.tituloEleitor}</td>
+                      <td>{user.sexo}</td>
+                      <td className="container-botao">
+                        <button>
+                          {' '}
+                          <i>
+                            <img
+                              src={IconLapis}
+                              onClick={() => handleEdit(user)}
+                              alt=""
+                            />
+                          </i>
+                        </button>{' '}
+                        <button>
+                          {' '}
+                          <i>
+                            <img
+                              src={IconLixeira}
+                              onClick={() => deletarUsuario(user.cpf)}
+                              alt=""
+                            />
+                          </i>{' '}
+                        </button>
+                      </td>
+                    </tr>
+                  )
+                })
+              ) : (
+                <tr>
+                  <td>{inputSearchResult?.nome}</td>
+                  <td>{inputSearchResult?.cpf}</td>
+                  <td>{inputSearchResult?.rg}</td>
+                  <td>{inputSearchResult?.cnh}</td>
+                  <td>{inputSearchResult?.nomeMae}</td>
+                  <td>{inputSearchResult?.nomePai}</td>
+                  <td>{inputSearchResult?.tituloEleitor}</td>
+                  <td>{inputSearchResult?.sexo}</td>
+                  <td className="container-botao">
+                    <button>
+                      {' '}
+                      <i>
+                        <img
+                          src={IconLapis}
+                          onClick={() => handleEdit(inputSearchResult)}
+                          alt=""
+                        />
+                      </i>
+                    </button>{' '}
+                    <button>
+                      {' '}
+                      <i>
+                        <img
+                          src={IconLixeira}
+                          onClick={() => deletarUsuario(inputSearchResult.cpf)}
+                          alt=""
+                        />
+                      </i>{' '}
+                    </button>
+                  </td>
+                </tr>
+              )}
             </table>
           </div>
         </ContainerUsuarios>
