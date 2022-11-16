@@ -11,6 +11,7 @@ export const ContainerDashboard = styled.div`
   }
   .iconMenu {
     color: #fff;
+    cursor: pointer;
   }
 `
 
@@ -33,12 +34,21 @@ export const ContainerUsuarios = styled.div`
     input {
       width: 300px;
       height: 30px;
-      border-radius: 5px;
+      border-radius: 5px 0px 0px 5px;
       border: none;
     }
     .IconSearch {
       color: #fff;
       padding-left: 5px;
+    }
+    .botaoSearch {
+      background-color: rgb(124, 38, 248);
+      border-radius: 0px 5px 5px 0px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
   }
 
@@ -67,13 +77,14 @@ export const ContainerUsuarios = styled.div`
       font-weight: 600;
     }
 
-    button {
+    .botaoAdicionarUsuario {
       background-color: rgb(124, 38, 248);
       border-radius: 5px;
       color: #fff;
       width: 220px;
       height: 42px;
       border: none;
+      font-weight: 600;
       cursor: pointer;
 
       :hover {
@@ -86,7 +97,7 @@ export const ContainerUsuarios = styled.div`
   table {
     width: 100%;
     border-collapse: collapse;
-    /* rgb(124, 38, 248) */
+
     th {
       background-color: #9f82d8;
       color: #fff;

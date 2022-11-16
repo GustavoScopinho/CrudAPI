@@ -2,6 +2,8 @@ import { createContext, useState } from 'react'
 import { api } from '../utilidades/api'
 import { INewUserContext, IChildren } from '../utilidades/interface'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import nProgress from 'nprogress'
 
 export const putContext = createContext({} as any)
 
@@ -10,15 +12,19 @@ export const PutContextProvider = ({ children }: IChildren) => {
 
   const editUser = async (user: INewUserContext) => {
     try {
-      console.log(user)
+      nProgress.start()
       await api
-
         .put(`/dados-pessoais/${user.cpf}`, user)
         .then(response => console.log(response))
-      alert('Usuario editado')
+      toast.success('Usuário editado com sucesso!', {
+        position: 'top-center',
+        theme: 'dark'
+      })
       navigate('/')
     } catch (error) {
       console.log(error)
+    } finally {
+      nProgress.done()
     }
   }
 

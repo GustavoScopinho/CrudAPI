@@ -1,8 +1,8 @@
 import React from 'react'
 import { ContainerAdmin, ContainerLogo, ContainerMenu } from './Admin.styled'
 import LogoAdmin from '../../assets/logo-roxo.png'
-import IconUser from '../../assets/icon-user.png'
-import IconSearch from '../../assets/icon-search.png'
+import { FcBusinessman } from 'react-icons/fc'
+import { FcSearch } from 'react-icons/fc'
 
 export const AdminPanel = () => {
   return (
@@ -17,13 +17,13 @@ export const AdminPanel = () => {
           <p>
             {' '}
             <i>
-              <img src={IconUser} alt="" />
+              <FcBusinessman size={25} className="iconPeople" />
             </i>{' '}
             Lista de usuários
           </p>
           <p>
             <i>
-              <img src={IconSearch} alt="" />
+              <FcSearch size={25} className="iconSearch" />
             </i>
             Pesquisar por CPF
           </p>

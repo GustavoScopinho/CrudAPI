@@ -4,11 +4,6 @@ export const ModalStyle = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
   }
-  // content: {
-  //   top: '50%',
-  //   left: '50%',
-  //   right: 'auto'
-  // }
 }
 
 export const Modal = styled.div`
@@ -18,7 +13,7 @@ export const Modal = styled.div`
   }
 `
 export const ContainerModal = styled.div`
-  width: 400px;
+  width: 350px;
   height: 700px;
   background-color: #7c7c8a;
   box-shadow: 1px 1px 5px 1px #000;
@@ -27,10 +22,11 @@ export const ContainerModal = styled.div`
   left: 38%;
   right: auto;
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 30px;
 
   h2 {
     padding-top: 20px;
+    text-align: center;
     color: #fff;
   }
 
@@ -71,6 +67,7 @@ export const ContainerModal = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    font-weight: 600;
     cursor: pointer;
     :hover {
       scale: 1.02;
@@ -90,5 +87,11 @@ export const ContainerModal = styled.div`
       scale: 1.1;
       transform: 2s;
     }
+  }
+
+  .submitContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 `

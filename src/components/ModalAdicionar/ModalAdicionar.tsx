@@ -189,11 +189,13 @@ export const ModalAdicionar = (props: ModalProps) => {
               </select>
             )}
 
-            <input
-              className="button-add"
-              type="submit"
-              value={props.type ? 'Editar usuário' : 'Adicionar novo usuário'}
-            />
+            <div className="submitContainer">
+              <input
+                className="button-add"
+                type="submit"
+                value={props.type ? 'Editar usuário' : 'Adicionar novo usuário'}
+              />
+            </div>
           </form>
         </ContainerModal>
       </Modal>

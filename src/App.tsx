@@ -6,6 +6,7 @@ import { GetUserProvider } from './context/getContext'
 import { PutContextProvider } from './context/putContext'
 import { DelContextProvider } from './context/delContext'
 import { ToastContainer, toast } from 'react-toastify'
+import 'nprogress/nprogress.css'
 
 import 'react-toastify/dist/ReactToastify.css'
 

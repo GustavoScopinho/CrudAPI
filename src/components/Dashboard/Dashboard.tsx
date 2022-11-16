@@ -77,8 +77,8 @@ export const Dashboard = () => {
                   id=""
                   onChange={e => setValueInput(e.target.value)}
                 />{' '}
-                <button type="submit">
-                  <BiSearchAlt className="IconSearch" size={30} />
+                <button className="botaoSearch" type="submit">
+                  <BiSearchAlt className="IconSearch" size={31.5} />
                 </button>
               </form>
               <button

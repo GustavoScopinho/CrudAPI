@@ -28,12 +28,12 @@ export const ContainerMenu = styled.div`
     padding-bottom: 8px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+  }
 
-    :nth-child(2) i > img {
-      padding-right: 10px;
-    }
-    :nth-child(3) i > img {
-      padding-right: 4px;
-    }
+  .iconSearch,
+  .iconPeople {
+    margin-right: 10px;
+    cursor: pointer;
   }
 `
