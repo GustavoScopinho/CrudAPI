@@ -33,3 +33,9 @@ Somente digitar no terminal: npm start
 
 #### Tela filtrando usuário:
 <img align="center" width="600px" src="https://i.imgur.com/XIx17aL.png" >
+
+ ### Desenvolvedor: 
+
+[<img src="https://avatars.githubusercontent.com/u/102439841?v=4" width=115 > <br> <sub> Gustavo Scopinho </sub>](https://github.com/GustavoScopinho)  |   
+| :---: | 
+
