@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import {
   ContainerDashboard,
   ContainerTitulo,
   ContainerUsuarios
 } from './Dashboard.styled'
-import IconMenu from '../../assets/icon-menu.png'
 import IconLapis from '../../assets/icon-lapis.png'
 import IconLixeira from '../../assets/icon-lixeira.png'
 import { ModalAdicionar } from '../ModalAdicionar/ModalAdicionar'

@@ -1,5 +1,7 @@
 import React, { createContext, useState } from 'react'
 import { useEffect } from 'react'
+
+import { Toast } from 'react-toastify/dist/components'
 import { api } from '../utilidades/api'
 import { INewUserContext, IChildren } from '../utilidades/interface'
 

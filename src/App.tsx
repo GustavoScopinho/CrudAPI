@@ -5,6 +5,9 @@ import { Home } from './pages/Home/Home'
 import { GetUserProvider } from './context/getContext'
 import { PutContextProvider } from './context/putContext'
 import { DelContextProvider } from './context/delContext'
+import { ToastContainer, toast } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
             </PutContextProvider>
           </GetUserProvider>
         </UserProvider>
+        <ToastContainer />
       </BrowserRouter>
     </>
   )
